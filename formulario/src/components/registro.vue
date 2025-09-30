@@ -3,8 +3,11 @@
     <h2>Registro</h2>
     <form @submit.prevent="registrarUsuario">
       <input type="text" v-model="nombre" placeholder="Nombre" required />
+      <input type="text" v-model="apellido" placeholder="Apellido" required />
       <input type="email" v-model="email" placeholder="Correo electrónico" required />
+      <input type="tel" v-model="telefono" placeholder="Teléfono" required />
       <input type="password" v-model="password" placeholder="Contraseña" required />
+      <input type="password" v-model="confirmarPassword" placeholder="Confirmar contraseña" required />
       <button type="submit">Registrarse</button>
     </form>
     <p v-if="mensaje" class="mensaje">{{ mensaje }}</p>
@@ -15,15 +18,28 @@
 import { ref } from 'vue'
 
 const nombre = ref('')
+const apellido = ref('')
 const email = ref('')
+const telefono = ref('')
 const password = ref('')
+const confirmarPassword = ref('')
 const mensaje = ref('')
 
 const registrarUsuario = () => {
-  mensaje.value = `Usuario ${nombre.value} registrado con éxito`
+  if (password.value !== confirmarPassword.value) {
+    mensaje.value = "Las contraseñas no coinciden"
+    return
+  }
+
+  mensaje.value = `Usuario ${nombre.value} ${apellido.value} registrado con éxito`
+  
+  // Limpiar campos
   nombre.value = ''
+  apellido.value = ''
   email.value = ''
+  telefono.value = ''
   password.value = ''
+  confirmarPassword.value = ''
 }
 </script>
 
@@ -96,4 +112,3 @@ button:hover {
   color: #ffd700;
 }
 </style>
-
