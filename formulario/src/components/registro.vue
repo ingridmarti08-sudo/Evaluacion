@@ -28,54 +28,72 @@ const registrarUsuario = () => {
 </script>
 
 <style scoped>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #e0f7fa;
+}
+
 .registro-form {
-  max-width: 350px;
-  margin: 50px auto;
+  width: 100%;
+  max-width: 360px;
+  margin: 60px auto;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background-color: #fff;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  color: #fff;
   text-align: center;
+  box-sizing: border-box;
 }
 
 h2 {
   margin-bottom: 20px;
-  color: #333;
+  font-size: 26px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 input {
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.3s;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s;
 }
 
 input:focus {
-  border-color: #4caf50;
+  box-shadow: 0 0 8px #fff;
 }
 
 button {
   width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
+  padding: 12px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 10px;
+  color: #fff;
   font-weight: bold;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 button:hover {
-  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .mensaje {
   margin-top: 15px;
-  color: #4caf50;
   font-weight: bold;
+  color: #ffd700;
 }
 </style>
+
